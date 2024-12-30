@@ -18,9 +18,9 @@ class MyApp extends StatelessWidget {
 Each of them applied carefully (Taken from figma design)
 -------------------------------------------------------
 
-family: Akatab font: Regular size: 14 (Continue Watching -> Akatab, SemiBold, 18) (See more -> Roboto, Regular, 14)
-family: Akatab font: Regular size: 14 (Trending Movies -> Akatab, SemiBold, 18)
-family: Roboto font: Regular size: 14 (Recommended For You -> Akatab, SemiBold, 18)
+Title-> family: Akatab font: Regular size: 14 (Continue Watching -> Akatab, SemiBold, 18) (See more -> Roboto, Regular, 14)
+Title-> family: Akatab font: Regular size: 14 (Trending Movies -> Akatab, SemiBold, 18)
+Title-> family: Roboto font: Regular size: 14 (Recommended For You -> Akatab, SemiBold, 18)
 
 Hello Rafsan (Roboto, Medium, 20)    Double Love, Curse Of The River, Sunite
 Let's (Roboto, Regular, 14)

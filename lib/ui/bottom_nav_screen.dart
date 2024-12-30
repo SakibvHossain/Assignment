@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:home_screen/controller/bottom_nav.dart';
+import 'package:home_screen/assignment_3/ui/screens/product_screen.dart';
 import 'package:home_screen/ui/screen/download.dart';
 import 'package:home_screen/ui/screen/home.dart';
+import 'package:home_screen/ui/screen/new_screen.dart';
 import 'package:home_screen/ui/screen/profile.dart';
 import 'package:home_screen/ui/screen/tv.dart';
+
+import '../data/controller/bottom_nav.dart';
 
 class BottomNavScreen extends StatelessWidget {
   BottomNavScreen({super.key});
@@ -14,8 +17,8 @@ class BottomNavScreen extends StatelessWidget {
   // Screens for the body
   final List<Widget> _screens = [
     Home(),
-    const Tv(),
-    const Download(),
+    NewScreen(),
+    const ProductScreen(),
     const Profile(),
   ];
   // Icons for the navbar
@@ -25,6 +28,8 @@ class BottomNavScreen extends StatelessWidget {
     Icons.download,
     Icons.person_outline_rounded,
   ];
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

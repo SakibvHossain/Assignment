@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:home_screen/controller/bottom_nav.dart';
 import 'package:home_screen/utils/image_assets.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:get/get.dart';
+
+import '../../data/controller/bottom_nav.dart';
 
 class Home extends StatelessWidget {
   Home({super.key});
@@ -355,7 +356,7 @@ class Home extends StatelessWidget {
   // Trending Movies
   Widget _buildTrendingMovieList(List<String> trending, List<String> movieName) {
     return SizedBox(
-      height: 180, // Adjust the height as per design
+      height: 180,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: trending.length,
