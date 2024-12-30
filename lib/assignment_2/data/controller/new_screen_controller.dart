@@ -4,7 +4,7 @@ import 'dart:ui';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
-import '../../utils/service/impl/api_service_impl.dart';
+import '../../../utils/service/impl/api_service_impl.dart';
 import '../model/product_model.dart';
 
 class NewScreenController extends GetxController{
@@ -34,7 +34,6 @@ class NewScreenController extends GetxController{
         for (var item in decodeProducts) {
           allProducts.add(ProductModel.fromJson(item));
         }
-
         Get.snackbar('Product Found', 'Product retrieve successful');
       } else {
         Get.snackbar('Product not found', 'Failed to fetch products');

@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:home_screen/assignment_1/ui/screen/home.dart';
+import 'package:home_screen/assignment_1/ui/screen/profile.dart';
 import 'package:home_screen/assignment_3/ui/screens/product_screen.dart';
-import 'package:home_screen/ui/screen/download.dart';
-import 'package:home_screen/ui/screen/home.dart';
-import 'package:home_screen/ui/screen/new_screen.dart';
-import 'package:home_screen/ui/screen/profile.dart';
-import 'package:home_screen/ui/screen/tv.dart';
+import 'package:home_screen/assignment_2/ui/screens/new_screen.dart';
 
 import '../data/controller/bottom_nav.dart';
 
@@ -21,6 +19,7 @@ class BottomNavScreen extends StatelessWidget {
     const ProductScreen(),
     const Profile(),
   ];
+
   // Icons for the navbar
   final List<IconData> _icons = [
     Icons.home,
@@ -35,7 +34,6 @@ class BottomNavScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          // Use GetX for managing the selected screen based on the index
           Obx(() {
             return _screens[navScreenController.selectedIndex.value];
           }),

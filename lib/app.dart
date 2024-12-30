@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:home_screen/ui/bottom_nav_screen.dart';
 import 'package:get/get.dart';
+
+import 'assignment_1/ui/bottom_nav_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

@@ -42,7 +42,6 @@ class ProductController extends GetxController {
         for (var product in fetchedProducts) {
           productBox.put(product.id, product);
         }
-
         // Update the observable list
         products.value = fetchedProducts;
       } else {
