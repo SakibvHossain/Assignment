@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:home_screen/ui/bottom_nav_screen.dart';
+import 'package:get/get.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       home: BottomNavScreen(),
     );
@@ -14,8 +15,8 @@ class MyApp extends StatelessWidget {
 }
 
 /*
-Each of them applied carefully
-------------------------------
+Each of them applied carefully (Taken from figma design)
+-------------------------------------------------------
 
 family: Akatab font: Regular size: 14 (Continue Watching -> Akatab, SemiBold, 18) (See more -> Roboto, Regular, 14)
 family: Akatab font: Regular size: 14 (Trending Movies -> Akatab, SemiBold, 18)

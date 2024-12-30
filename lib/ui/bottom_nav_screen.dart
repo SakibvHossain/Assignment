@@ -23,7 +23,7 @@ class BottomNavScreen extends StatelessWidget {
     Icons.home,
     Icons.tv,
     Icons.download,
-    Icons.person,
+    Icons.person_outline_rounded,
   ];
   @override
   Widget build(BuildContext context) {

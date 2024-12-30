@@ -6,7 +6,7 @@ class Download extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Text('Download'),
+      body: SafeArea(child: Text('Download')),
     );
   }
 }

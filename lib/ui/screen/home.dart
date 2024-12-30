@@ -9,6 +9,7 @@ class Home extends StatelessWidget {
 
   final BottomNav controller = Get.put(BottomNav());
 
+  // Continue Watching Sections (Image & Title)
   final List<String> continueWatchingImages = [
     ImageAssets.continueWatching_1,
     ImageAssets.continueWatching_2
@@ -18,6 +19,7 @@ class Home extends StatelessWidget {
     'Emily in Paris | Season - 1| Episode - 1'
   ];
 
+  // Recommended Sections (Image & Title)
   final List<String> recommendedVideoImages = [
     ImageAssets.recommended_1,
     ImageAssets.recommended_2,
@@ -31,6 +33,7 @@ class Home extends StatelessWidget {
     'Double Love'
   ];
 
+  // Trending Sections (Image & Title)
   final List<String> trendingMoviesImages = [
     ImageAssets.trending_2,
     ImageAssets.trending_1,
@@ -65,6 +68,8 @@ class Home extends StatelessWidget {
 
               // Search Box with Additional Icon
               _buildSearchBoxAndIcon(),
+
+
               const SizedBox(height: 20),
 
               // Categories
@@ -94,16 +99,19 @@ class Home extends StatelessWidget {
               // Chips
               buildCategoryChips(),
 
+
               const SizedBox(height: 20),
 
               // 3 Slider
               buildSlider(),
+
 
               const SizedBox(height: 20),
 
               // Trending Movies
               _buildSectionHeader("Trending Movies"),
               _buildTrendingMovieList(trendingMoviesImages, trendingMovieTitle),
+
 
               const SizedBox(height: 20),
 
@@ -112,13 +120,12 @@ class Home extends StatelessWidget {
               _buildHorizontalContinueMovieList(
                   continueWatchingImages, continueWatchingVideoTitle),
 
-              // SizedBox(height: 20),
-
               // Recommended For You
               _buildSectionHeader("Recommended For You"),
               _buildHorizontalRecommendedList(
                   recommendedVideoImages, recommendedVideoTitle),
 
+              // Height after Bottom Nav
               const SizedBox(
                 height: 120,
               )
@@ -181,6 +188,74 @@ class Home extends StatelessWidget {
     );
   }
 
+  //Search bar with Filter Icon
+  Row _buildSearchBoxAndIcon() {
+    return Row(
+      children: [
+        Expanded(
+          child: TextField(
+            decoration: InputDecoration(
+              filled: true,
+              fillColor: Colors.grey[900],
+              hintText: 'Search',
+              hintStyle: const TextStyle(color: Colors.grey),
+              suffixIcon: const Icon(Icons.search, color: Colors.white),
+              // Search icon on trailing side
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(30),
+                borderSide: const BorderSide(color: Colors.white), // White border
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(30),
+                borderSide: const BorderSide(
+                    color: Colors.white), // White border for enabled state
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(30),
+                borderSide: const BorderSide(
+                    color: Colors.white,
+                    width: 2), // White border for focused state
+              ),
+            ),
+            style: const TextStyle(color: Colors.white),
+          ),
+        ),
+        const SizedBox(width: 8),
+
+        Container(
+          decoration: BoxDecoration(
+            color: Colors.red, // Red background
+            borderRadius: BorderRadius.circular(8), // Rounded corners
+          ),
+          padding: const EdgeInsets.all(8), // Padding inside the container
+          child: const Icon(
+            Icons.tune, // Filter icon
+            color: Colors.white,
+            size: 24,
+          ),
+        ),
+      ],
+    );
+  }
+
+  Container _buildBanner(String imagePath) {
+    return Container(
+      //Slider (w -> 343, H -> 165)
+      height: 165,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(16.0),
+        color: Colors.grey[800],
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(16.0),
+        child: Image(
+          image: AssetImage(imagePath),
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
+  }
+
   Column buildSlider() {
     return Column(
       children: [
@@ -221,24 +296,6 @@ class Home extends StatelessWidget {
     );
   }
 
-  Container _buildBanner(String imagePath) {
-    return Container(
-      //Slider (w -> 343, H -> 165)
-      height: 165,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16.0),
-        color: Colors.grey[800],
-      ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(16.0),
-        child: Image(
-          image: AssetImage(imagePath),
-          fit: BoxFit.cover,
-        ),
-      ),
-    );
-  }
-
   SingleChildScrollView buildCategoryChips() {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
@@ -251,54 +308,6 @@ class Home extends StatelessWidget {
           _buildCategoryChip("Thriller", false),
         ],
       ),
-    );
-  }
-
-  Row _buildSearchBoxAndIcon() {
-    return Row(
-      children: [
-        Expanded(
-          child: TextField(
-            decoration: InputDecoration(
-              filled: true,
-              fillColor: Colors.grey[900],
-              hintText: 'Search',
-              hintStyle: TextStyle(color: Colors.grey),
-              suffixIcon: Icon(Icons.search, color: Colors.white),
-              // Search icon on trailing side
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(30),
-                borderSide: BorderSide(color: Colors.white), // White border
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(30),
-                borderSide: BorderSide(
-                    color: Colors.white), // White border for enabled state
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(30),
-                borderSide: BorderSide(
-                    color: Colors.white,
-                    width: 2), // White border for focused state
-              ),
-            ),
-            style: TextStyle(color: Colors.white),
-          ),
-        ),
-        SizedBox(width: 8),
-        Container(
-          decoration: BoxDecoration(
-            color: Colors.red, // Red background
-            borderRadius: BorderRadius.circular(8), // Rounded corners
-          ),
-          padding: EdgeInsets.all(8), // Padding inside the container
-          child: Icon(
-            Icons.tune, // Filter icon
-            color: Colors.white,
-            size: 24,
-          ),
-        ),
-      ],
     );
   }
 
@@ -344,8 +353,7 @@ class Home extends StatelessWidget {
   }
 
   // Trending Movies
-  Widget _buildTrendingMovieList(
-      List<String> trending, List<String> movieName) {
+  Widget _buildTrendingMovieList(List<String> trending, List<String> movieName) {
     return SizedBox(
       height: 180, // Adjust the height as per design
       child: ListView.builder(
@@ -395,8 +403,7 @@ class Home extends StatelessWidget {
   }
 
   // Continue Watching
-  Widget _buildHorizontalContinueMovieList(
-      List<String> continueWatching, List<String> continueWatchingTitle) {
+  Widget _buildHorizontalContinueMovieList(List<String> continueWatching, List<String> continueWatchingTitle) {
     return SizedBox(
       height: 180, // Adjust the height as per design
       child: ListView.builder(
@@ -422,7 +429,6 @@ class Home extends StatelessWidget {
                     // Ensures rounded corners
                     child: Image(
                       fit: BoxFit.cover,
-                      // Ensures the image covers the entire container
                       image: AssetImage(continueWatching[index]),
                     ),
                   ),
@@ -437,9 +443,7 @@ class Home extends StatelessWidget {
                         fontFamily: 'Akatab-Regular',
                         fontSize: 14),
                     maxLines: 2,
-                    // Limits to 2 lines
                     overflow: TextOverflow.ellipsis,
-                    // Adds ellipsis if text overflows
                     softWrap: true,
                   ),
                 ),
@@ -450,7 +454,7 @@ class Home extends StatelessWidget {
       ),
     );
   }
-
+  // Function for specific String
   String formatVideoTitle(String title) {
     if (title.startsWith('Emily in Paris')) {
       return title.replaceFirst('Emily in Paris |', 'Emily in Paris |\n');
@@ -459,8 +463,7 @@ class Home extends StatelessWidget {
   }
 
   // Recommended For You
-  Widget _buildHorizontalRecommendedList(
-      List<String> recommendVideos, List<String> recommendVideosTile) {
+  Widget _buildHorizontalRecommendedList(List<String> recommendVideos, List<String> recommendVideosTile) {
     return SizedBox(
       height: 180, // Adjust the height as per design
       child: ListView.builder(
