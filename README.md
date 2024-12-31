@@ -1,16 +1,59 @@
-# home_screen
+# Interview Assignment
 
-A new Flutter project.
+### Skills are used:
+1. **Flutter**
+2. **Dart**
+3. **Rest Api** (To populate data on design)
+4. **Hive** (To store data on local storage)
+5. **UI design** (Create UI based on given design (**Figma**))
+6. **Feature First Approach** (To organize project stucture)
 
-## Getting Started
+### Project Structure:  
+```
+lib/
+├── assignment_1/
+│   ├── data/
+│   │   └── controller/
+│   ├── ui/
+│   │   └── screens/
+├── assignment_2/
+│   ├── data/
+│   │    ├── models/
+│   │    ├── controller/
+│   ├── ui/
+│   │   ├── screens/
+│   │   └── widgets/
+├── assignment_3/
+│   ├── data/
+│   │   ├── models/
+│   │   ├── controller/
+│   ├── ui/
+│   │   ├── screens/
+│   │   └── widgets/
+├── utils
+│   ├── service/
+│   │    └── impl/
+```
 
-This project is a starting point for a Flutter application.
+### Output Of the Assignment with requirments:
+1. **Design only the Homescreen of this figma design:**
+   
+   ![Capture_2](https://github.com/user-attachments/assets/9780f61c-2301-447c-8eff-f4952c5fea5e)
+   ![Capture_1](https://github.com/user-attachments/assets/295af60b-495b-438b-a509-f1358bdeba39)
 
-A few resources to get you started if this is your first Flutter project:
+2. **Fetching Data from a REST API:**
+   
+   ![Capture_1](https://github.com/user-attachments/assets/7adff272-68e3-4582-9ddd-eb58a6308f17)  
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+3. **Offline Capabilities with Local Storage:**  
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+   **When online:**
+
+   ![Capture_1](https://github.com/user-attachments/assets/ceb8488e-f33e-4079-aadf-eeeee536a144)
+
+   **When Offline:**
+
+   ![Capture_3](https://github.com/user-attachments/assets/460f8534-8ee6-45d3-8955-0d78c6c8ffc6)
+   ![Capture_2](https://github.com/user-attachments/assets/4b6817a1-5693-415a-884d-ea50901b78af)
+
+
